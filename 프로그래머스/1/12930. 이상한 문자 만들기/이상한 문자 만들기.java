@@ -10,10 +10,7 @@ class Solution {
                 cnt = 0;
             }
             else{
-                if(cnt%2==0)
-                    answer += sub.toUpperCase();
-                else
-                    answer += sub.toLowerCase();
+                answer += (cnt%2==0)? sub.toUpperCase() : sub.toLowerCase();
                 cnt++;
             }
         }
