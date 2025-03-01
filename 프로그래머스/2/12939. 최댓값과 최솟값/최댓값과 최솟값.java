@@ -1,11 +1,12 @@
 class Solution {
     public String solution(String s) {
         String arr[] = s.split(" ");
-        int max = Integer.parseInt(arr[0]);
-        int min = Integer.parseInt(arr[0]);
+        int max, min, n;
+        max = min = Integer.parseInt(arr[0]);
         for(int i=1; i<arr.length; i++){
-            if(max<Integer.parseInt(arr[i])) max = Integer.parseInt(arr[i]);
-            if(min>Integer.parseInt(arr[i])) min = Integer.parseInt(arr[i]);
+            n = Integer.parseInt(arr[i]);
+            if(max<n) max = n;
+            if(min>n) min = n;
         }
         return min+" "+max;
     }
