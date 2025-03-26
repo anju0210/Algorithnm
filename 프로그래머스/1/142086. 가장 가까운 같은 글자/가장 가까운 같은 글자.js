@@ -1,13 +1,10 @@
 function solution(s) {
-    var answer = [-1];
-    for(let i=1; i<s.length; i++){
-        for(let j=i-1; j>=0; j--){
-            if(s[j]==s[i]){
-                answer[i] = i-j;
-                break;
-            }
-        }
-        if(answer[i]==null) answer[i] = -1;
+    var answer = [];
+    let obj = {};
+    for(let i=0; i<s.length; i++){
+        if(obj[s[i]]!=null) answer[i] = i-obj[s[i]];
+        else answer[i] = -1;
+        obj[s[i]] = i;
     }
     return answer;
 }
