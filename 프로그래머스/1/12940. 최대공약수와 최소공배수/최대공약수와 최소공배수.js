@@ -3,7 +3,7 @@ function solution(n, m) {
     let max = Math.max(n, m);
     let min = Math.min(n, m);
     let num = max%min;
-    while(num!=0){
+    while(num){
         max = min;
         min = num;
         num = max%min;
