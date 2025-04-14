@@ -1,22 +1,15 @@
 import java.util.*;
 class Solution {
     public boolean solution(String[] phone_book) {
-        boolean answer = true;
-        HashMap<String, Integer> tel = new HashMap<>();
+        HashSet<String> tel = new HashSet<>(Arrays.asList(phone_book));
         
-        for(int i=0; i<phone_book.length; i++)
-            tel.put(phone_book[i], phone_book[i].length());
-        
-        for(int i=0; i<tel.size(); i++){
-            int len = tel.get(phone_book[i]);
-            for(int j=0; j<len; j++){
-                if(tel.containsKey(phone_book[i].substring(0, j))){
-                    answer = false;
-                    break;
+        for(String str : tel){
+            for(int i=0; i<str.length(); i++){
+                if(tel.contains(str.substring(0, i))){
+                    return false;
                 }
             }
-            if(!answer) break;
         }
-        return answer;
+        return true;
     }
 }
