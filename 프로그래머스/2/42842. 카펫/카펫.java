@@ -11,7 +11,8 @@ class Solution {
                         s[0] = s[1];
                         s[1] = temp;
                     }
-                    answer = s;   
+                    answer = s;
+                    break;
                 }
             }
         }
